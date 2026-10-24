@@ -144,14 +144,22 @@ Ensure the following dependencies are installed on your workstation (or inside W
    pnpm install
    ```
 
-3. Configure environment variables:
+3. Configure environment variables and secrets:
+
+   The platform supports secret injection via Infisical Cloud or local `.env` files:
 
    ```bash
-   # Copy template environment files
+   # Option A: Infisical CLI injection (Recommended)
+   infisical run --projectId <PLATFORM_PROJECT_ID> --env dev -- pnpm corporate:dev
+
+   # Option B: Local .env file fallback
    cp k8s/.env.example k8s/.env
    cp corporate/services/api/.env.example corporate/services/api/.env
    cp corporate/services/web/.env.example corporate/services/web/.env
    ```
+
+   When operating inside the umbrella meta-repository (`org-core`), secrets can also cascade
+   from the parent `.env` file or a root Infisical session.
 
 ---
 
