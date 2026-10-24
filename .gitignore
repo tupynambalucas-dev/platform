@@ -70,3 +70,5 @@ logs/
 
 *-backup/
 tupynambalucas-backup/
+
+generated/

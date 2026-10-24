@@ -1,6 +1,6 @@
-# Platform Monorepo
+# Tupynambalucas Platform Monorepo
 
-The core platform monorepo powering the %PROJECT_DOMAIN% ecosystem. Built on TypeScript, Fastify 5, React 19, PNPM Workspaces, and Turborepo with Kubernetes-native orchestration via Skaffold and k3d.
+The core platform monorepo powering the tupynambalucas.dev ecosystem. Built on TypeScript, Fastify 5, React 19, PNPM Workspaces, and Turborepo with Kubernetes-native orchestration via Skaffold and k3d.
 
 > [!NOTE]
 > **Documentation Hub:** Full architectural deep dives, Diátaxis guides, and tutorials are available at [https://docs.tupynambalucas.dev](https://docs.tupynambalucas.dev) and hosted sovereignly in the [`docs`](https://github.com/tupynambalucas-dev/docs) repository.
@@ -112,6 +112,7 @@ graph TD
 | **`hub/studio/assets`**       | [`hub/studio/assets`](./hub/studio/assets)             | Canonical design tokens, SVG/PNG brand marks, typography, and React icons.            |
 | **`hub/cortex`**              | [`hub/cortex`](./hub/cortex)                           | AgentGateway MCP proxy, CEL policy guardrails, and persistent vector memory.          |
 | **`k8s`**                     | [`k8s`](./k8s)                                         | Declarative Kubernetes manifests (Kustomize), Helm charts, and Skaffold configs.      |
+| **`renderer`**                | [`renderer`](./renderer)                               | Dynamic document compilation engine and asset renderer.                               |
 | **`shared`**                  | [`shared`](./shared)                                   | Cross-workspace shared configurations, ESLint/Prettier rules, and TypeScript configs. |
 | **`tools`**                   | [`tools`](./tools)                                     | Developer automation scripts and GitHub CLI workflows.                                |
 
