@@ -1,4 +1,4 @@
-# Tupynambalucas Platform Monorepo
+# tupynambalucas.dev Platform Monorepo
 
 The core platform monorepo powering the tupynambalucas.dev ecosystem. Built on TypeScript, Fastify 5, React 19, PNPM Workspaces, and Turborepo with Kubernetes-native orchestration via Skaffold and k3d.
 

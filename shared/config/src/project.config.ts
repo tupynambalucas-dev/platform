@@ -1,6 +1,6 @@
 export const ProjectConfig = {
-  PROJECT_NAME: 'Tupynambalucas',
-  PROJECT_DISPLAY_NAME: 'Tupynambá Lucas',
+  PROJECT_NAME: 'tupynambalucas.dev',
+  PROJECT_DISPLAY_NAME: 'tupynambalucas.dev',
   PROJECT_DOMAIN: 'tupynambalucas.dev',
   PROJECT_DOCS_URL: 'https://docs.tupynambalucas.dev',
   PROJECT_INTERNAL_HOST: 'tupynambalucas.internal',
