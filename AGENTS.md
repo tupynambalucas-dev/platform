@@ -1,18 +1,19 @@
 # tupynambalucas.dev Agents Context
 
 This document serves as the root context router for AI agents operating in the
-tupynambalucas.dev monorepo.
+`tupynambalucas-dev/platform` monorepo.
 
 ## Navigation
 
-- [README.md](./README.md): Serves as the dynamic GitHub Profile view (updated by the `@Tupynambalucas/renderer` workspace) and contains the official developer entry point and technical architecture within a toggleable details block.
-- [.agents](./.agents/AGENTS.md): Authoritative domain for agentic AI configurations, skills, plugins, and repository manipulation scripts.
-- [hub](./hub/AGENTS.md): Internal team context grouping `observability` (Grafana, Loki, Prometheus), `network` (Traefik, Cloudflared), `tools` (Headlamp), `studio` (Penpot, Memos, brand assets), and `cortex` (AgentGateway, Memory subsystem).
-- [corporate](./corporate/AGENTS.md): Public-facing products context housing the company website (React), API (Fastify), and documentation portal (Docusaurus).
-- [k8s](./k8s/AGENTS.md): Core infrastructure manifests organized by environment overlays (`dev`, `staging`, `prod`) and Helm charts.
-- [renderer](./renderer/AGENTS.md): Dynamic asset generator and document compilation engine producing GitHub profile SVG cards and templated Markdown.
-- [shared](./shared/AGENTS.md): Foundational cross-workspace utilities, global configurations, and Git hooks.
-- [tools](./tools/AGENTS.md): GitHub CLI automation, repository provisioning scripts, and containerized Git environments.
+- [README.md](./README.md): Official developer entry point and technical architecture.
+- [.agents](./.agents/AGENTS.md): Authoritative domain for agentic AI configurations, skills, and plugins.
+- [hub](./hub/AGENTS.md): Internal team context grouping `observability`, `network`, `tools`, `studio`, and `cortex`.
+- [corporate](./corporate/AGENTS.md): Public-facing products context housing company website and API.
+- [k8s](./k8s/AGENTS.md): Core infrastructure manifests organized by environment overlays (`dev`, `staging`, `prod`).
+- [renderer](./renderer/AGENTS.md): Dynamic asset generator and document compilation engine.
+- [shared](./shared/AGENTS.md): Cross-workspace utilities, global configurations, and Git hooks.
+- [tools](./tools/AGENTS.md): GitHub CLI automation, provisioning scripts, and containerized Git environments.
+- [agent-toolkit](../agent-toolkit/AGENTS.md): Shared AI agent governance and MCP connectors (via `org-core`).
 
 ## Architecture
 
@@ -27,31 +28,22 @@ Cloud environments (`staging` and `prod`) are delivered via ArgoCD GitOps, circu
 ## Scoped Guardrails
 
 - MUST maintain a strict senior, objective, and technical tone in all communications, logs, and documentation.
-- MUST avoid preambles, introductory chatter, conversational filler, or conclusion summaries in all responses.
-- MUST keep sentences concise, clear, and direct.
+- MUST avoid preambles, introductory chatter, conversational filler, or conclusion summaries.
 - MUST conduct all conversational chat responses in Brazilian Portuguese (pt-BR).
 - MUST write all code, configuration, technical documentation, commit messages, and Markdown files in English (en-US).
 - MUST NOT use emojis in any conversational response, chat message, technical document, README, or skill file.
 - MUST NOT use placeholders (e.g., TODO, TBD).
-- MUST use relative paths for all Markdown links. Absolute filesystem paths are strictly
-  forbidden.
-- MUST format all files according to Prettier standards (2-space indent, max 100-character
-  line width).
-- MUST hardcode the project name and domain in all `AGENTS.md` and `README.md` files (e.g., `Tupynambalucas`, `tupynambalucas.dev`).
-- MUST NOT use template placeholder tokens like `%PROJECT_DOMAIN%` or `%PROJECT_NAME%` outside of the `corporate/collections` directory.
+- MUST sign all Git commits with SSH: `git commit -S -m "..."`.
+- MUST use relative paths for all Markdown links. Absolute filesystem paths are strictly forbidden.
+- MUST format all files according to Prettier standards (2-space indent, max 100-character line width).
+- MUST hardcode the project name and domain in all `AGENTS.md` and `README.md` files (e.g., `tupynambalucas.dev`).
+- **Secret Hygiene**: Secrets are resolved via Infisical (`infisical run --projectId ... --env dev`) or local `.env` fallback. Plaintext tokens must never be logged or committed.
 - **Routing**: When working within a specific bounded context, agents MUST read the local `AGENTS.md` file within that directory before proceeding.
 
 ## Required Skills
 
-When performing documentation tasks in this monorepo, agents MUST activate the appropriate skill
-by name before beginning:
+When performing documentation tasks in this monorepo, agents MUST activate the appropriate skill by name before beginning:
 
-- **`agent-router-expert`**: MUST be active when creating, updating, or reviewing any `AGENTS.md`
-  file anywhere in the monorepo. This skill defines the 3-layer context hierarchy standard,
-  `<context-hierarchy>` directive syntax, line budgets, and validation workflow.
-- **`markdown-expert`**: MUST be active when creating, updating, or reviewing any `README.md`,
-  `.md` skill file, or general Markdown document outside the `knowledge-base/` workspace.
-
-These skills are referenced by name only and are resolved by the active agent runtime. Do not
-reference skill files by filesystem path, as agents running in isolated container environments
-resolve skills exclusively by their registered name.
+- **`agent-router-expert`**: Active when creating, updating, or reviewing any `AGENTS.md` file anywhere in the monorepo.
+- **`markdown-expert`**: Active when creating, updating, or reviewing any `README.md`, `.md` skill file, or general Markdown document.
+- **`secrets-expert`**: Active when configuring or verifying Infisical secrets or Kubernetes secret manifests.

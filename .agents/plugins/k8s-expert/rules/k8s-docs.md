@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Apply when creating, modifying, or deleting Kubernetes manifests in this repository.
+---
+
 # Kubernetes Documentation Rule
 
 > **CRITICAL AGENT INSTRUCTION:**

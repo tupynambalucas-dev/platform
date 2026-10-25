@@ -12,15 +12,15 @@ import ProjectConfig from '@tupynambalucas-dev/shared-config/project.config';
 
 export const readmePipeline: Pipeline = {
   id: 'readme',
-  name: 'Root README',
-  description: 'Compiles the main README and its respective statistics cards.',
+  name: 'Platform Monorepo README',
+  description: 'Compiles the main platform README and its architecture overview.',
   targets: [
     {
-      name: 'Root Profile README',
+      name: 'Platform Monorepo README',
       templatePath: 'src/pipelines/readme/readme.template.md',
-      outputPath: '../README.md', // Writes directly to the monorepo root (D:\projects\tupynambalucas\README.md)
+      outputPath: '../README.md',
       ciPath: 'README.md',
-      ciBranches: ['main'],
+      ciBranches: ['develop', 'main'],
     },
   ],
   async run(stats: GitHubStats, config: Config, workspaceRoot: string): Promise<void> {
@@ -67,7 +67,7 @@ export const readmePipeline: Pipeline = {
     const urlSuffix = '?raw=true';
 
     // Header image markdown tag
-    const headerImage = `<img alt="Tupynambá Lucas" src="${assetsBaseUrl}/static/github-header.svg${urlSuffix}" width="100%" />`;
+    const headerImage = `<img alt="Platform Architecture" src="${assetsBaseUrl}/static/github-header.svg${urlSuffix}" width="100%" />`;
 
     const overviewImages = `<picture>
     <source media="(prefers-color-scheme: dark)" srcset="${assetsBaseUrl}/stats/overview.svg${urlSuffix}#gh-dark-mode-only" />
@@ -153,38 +153,53 @@ export const readmePipeline: Pipeline = {
       }
     }
 
-    console.info('\nUploading assets to GitHub...');
+    // Save generated cards locally to generated/cards
+    const generatedCardsDir = resolve(workspaceRoot, '../generated/cards');
+    mkdirSync(resolve(generatedCardsDir, 'stats'), { recursive: true });
+    mkdirSync(resolve(generatedCardsDir, 'static'), { recursive: true });
+    writeFileSync(resolve(generatedCardsDir, 'stats/overview.svg'), overviewSvg, 'utf8');
+    writeFileSync(resolve(generatedCardsDir, 'stats/languages.svg'), languagesSvg, 'utf8');
+    writeFileSync(resolve(generatedCardsDir, 'static/github-header.svg'), headerSvgContent, 'utf8');
+    console.info(`Saved generated cards locally to ${generatedCardsDir}`);
 
-    console.info('Uploading SVGs to "generated" branch...');
-    await uploadFileContents(
-      config.repositoryOwner,
-      config.repositoryName,
-      'cards/stats/overview.svg',
-      overviewSvg,
-      'generated',
-      config.githubToken,
-      'chore: update overview stats',
-    );
-    await uploadFileContents(
-      config.repositoryOwner,
-      config.repositoryName,
-      'cards/stats/languages.svg',
-      languagesSvg,
-      'generated',
-      config.githubToken,
-      'chore: update languages stats',
-    );
-    await uploadFileContents(
-      config.repositoryOwner,
-      config.repositoryName,
-      'cards/static/github-header.svg',
-      headerSvgContent,
-      'generated',
-      config.githubToken,
-      'chore: update static github header',
-    );
-
-    console.info('GitHub Profile successfully generated and assets synced to all branches!');
+    if (config.isGitHubAction) {
+      console.info('\nUploading assets to GitHub...');
+      console.info('Uploading SVGs to "generated" branch...');
+      try {
+        await uploadFileContents(
+          config.repositoryOwner,
+          config.repositoryName,
+          'cards/stats/overview.svg',
+          overviewSvg,
+          'generated',
+          config.githubToken,
+          'chore: update overview stats',
+        );
+        await uploadFileContents(
+          config.repositoryOwner,
+          config.repositoryName,
+          'cards/stats/languages.svg',
+          languagesSvg,
+          'generated',
+          config.githubToken,
+          'chore: update languages stats',
+        );
+        await uploadFileContents(
+          config.repositoryOwner,
+          config.repositoryName,
+          'cards/static/github-header.svg',
+          headerSvgContent,
+          'generated',
+          config.githubToken,
+          'chore: update static github header',
+        );
+        console.info('Platform Monorepo successfully generated and assets synced to all branches!');
+      } catch (uploadError) {
+        console.warn('Warning: Failed to upload assets to GitHub branch "generated":', uploadError);
+      }
+    } else {
+      console.info('Local execution completed: assets generated and saved to disk.');
+    }
   },
 };
 
