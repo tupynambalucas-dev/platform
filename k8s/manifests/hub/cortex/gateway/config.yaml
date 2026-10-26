@@ -60,6 +60,12 @@ mcp:
     - name: firecrawl
       mcp:
         host: http://mcp-firecrawl:8080/mcp
+    - name: google-workspace
+      mcp:
+        host: http://mcp-google-workspace:8080/mcp
+    - name: appsheet
+      mcp:
+        host: http://mcp-appsheet:8080/mcp
     - name: grafana
       mcp:
         host: http://mcp-grafana:8080/mcp
