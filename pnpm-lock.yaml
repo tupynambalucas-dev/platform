@@ -473,9 +473,9 @@ importers:
       '@eslint/js':
         specifier: catalog:tooling-stack
         version: 10.0.1(eslint@10.11.0(jiti@2.7.0)(supports-color@10.2.2))
-      '@tupynambalucas-dev/agent-toolkit':
-        specifier: github:tupynambalucas-dev/agent-toolkit
-        version: https://codeload.github.com/tupynambalucas-dev/agent-toolkit/tar.gz/5602e24345c3c7fced4edbf608d4addc48577a18
+      '@tupynambalucas-dev/agent-mesh':
+        specifier: github:tupynambalucas-dev/agent-mesh
+        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
         version: link:shared/config
@@ -3556,11 +3556,12 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-  '@tupynambalucas-dev/agent-toolkit@https://codeload.github.com/tupynambalucas-dev/agent-toolkit/tar.gz/5602e24345c3c7fced4edbf608d4addc48577a18':
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b':
     resolution:
       {
         gitHosted: true,
-        tarball: https://codeload.github.com/tupynambalucas-dev/agent-toolkit/tar.gz/5602e24345c3c7fced4edbf608d4addc48577a18,
+        integrity: sha512-7r7lrWZ8OP2jNkubvOHeyvvHlQ2NbV63ekkUdfPdyTk8XcsAptLSML75mBaFUahm3FGkd6VshPujO7rXaVLusA==,
+        tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b,
       }
     version: 1.0.0
 
@@ -10513,7 +10514,7 @@ snapshots:
       tailwindcss: 4.3.3
       vite: 8.3.4(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
-  '@tupynambalucas-dev/agent-toolkit@https://codeload.github.com/tupynambalucas-dev/agent-toolkit/tar.gz/5602e24345c3c7fced4edbf608d4addc48577a18':
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b':
     {}
 
   '@turbo/darwin-64@2.11.5':
