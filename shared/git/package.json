@@ -12,7 +12,7 @@
   },
   "type": "module",
   "scripts": {
-    "prepare": "cd ../.. && husky shared/git/husky"
+    "// prepare": "deprecated: husky initialized at platform root"
   },
   "devDependencies": {
     "husky": "catalog:"
