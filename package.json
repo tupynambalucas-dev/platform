@@ -70,7 +70,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@tupynambalucas-dev/agent-toolkit": "github:tupynambalucas-dev/agent-toolkit",
+    "@tupynambalucas-dev/agent-mesh": "github:tupynambalucas-dev/agent-mesh",
     "@changesets/cli": "catalog:",
     "@clack/prompts": "catalog:",
     "@docusaurus/eslint-plugin": "catalog:tooling-stack",

@@ -13,7 +13,7 @@ This document serves as the root context router for AI agents operating in the
 - [renderer](./renderer/AGENTS.md): Dynamic asset generator and document compilation engine.
 - [shared](./shared/AGENTS.md): Cross-workspace utilities, global configurations, and Git hooks.
 - [tools](./tools/AGENTS.md): GitHub CLI automation, provisioning scripts, and containerized Git environments.
-- [agent-toolkit](../agent-toolkit/AGENTS.md): Shared AI agent governance and MCP connectors (via `org-core`).
+- [agent-mesh](../agent-mesh/AGENTS.md): Shared AI agent governance and MCP connectors (via `org-core`).
 
 ## Architecture
 
