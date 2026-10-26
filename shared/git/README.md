@@ -1,13 +1,11 @@
 # Shared Git Utilities
 
-The @tupynambalucas-dev/shared-git workspace contains the standardized Git lifecycle hooks (via Husky) and TypeScript-based commit validation scripts for the tupynambalucas.dev monorepo.
+The @tupynambalucas-dev/shared-git workspace contains the standardized Git lifecycle scripts and TypeScript-based commit validation helpers for the platform repository.
 
 ## Directory Layout
 
-- husky/: Contains the Git hooks bindings (e.g., pre-commit, prepare-commit-msg).
-- scripts/: Contains the actual cross-platform TypeScript scripts executed by the hooks.
+- scripts/: Contains the cross-platform TypeScript scripts executed by repository root hooks (.husky/).
 
 ## Features
 
-- **Husky Automation**: Triggers automated scripts during pre-commit and prepare-commit-msg phases.
-- **TypeScript Tooling**: Hook scripts are written in TypeScript and executed via Node for seamless cross-platform execution (Windows/macOS/Linux).
+- **TypeScript Tooling**: Hook scripts are written in TypeScript and executed via Node/tsx for seamless cross-platform execution (Windows/macOS/Linux).
