@@ -18,8 +18,13 @@ spec:
     spec:
       containers:
         - name: mcp-firecrawl
-          image: cortex-mcp-firecrawl:latest
+          image: node:22-alpine
           imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - -c
+          args:
+            - npx -y @tupynambalucas-dev/cortex-mcp-firecrawl
           ports:
             - containerPort: 8080
           resources:
@@ -30,11 +35,19 @@ spec:
               memory: '256Mi'
               cpu: '200m'
           env:
+            - name: PORT
+              value: '8080'
             - name: FIRECRAWL_API_KEY
               valueFrom:
                 secretKeyRef:
                   name: cortex-secrets
                   key: FIRECRAWL_API_KEY
+                  optional: true
+            - name: NODE_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cortex-secrets
+                  key: GITHUB_PACKAGES_TOKEN
                   optional: true
 ---
 apiVersion: v1

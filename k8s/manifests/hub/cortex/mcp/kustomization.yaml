@@ -10,3 +10,5 @@ resources:
   - kubectl.yaml
   - memory.yaml
   - playwright.yaml
+  - google-workspace.yaml
+  - appsheet.yaml

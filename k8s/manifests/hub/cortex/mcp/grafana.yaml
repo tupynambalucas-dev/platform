@@ -18,8 +18,17 @@ spec:
     spec:
       containers:
         - name: mcp-grafana
-          image: cortex-mcp-grafana:latest
+          image: grafana/mcp-grafana:latest
           imagePullPolicy: IfNotPresent
+          args:
+            - -t
+            - streamable-http
+            - --address
+            - 0.0.0.0:8080
+            - -allowed-hosts
+            - '*'
+            - -allowed-origins
+            - '*'
           ports:
             - containerPort: 8080
           resources:

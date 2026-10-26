@@ -18,8 +18,20 @@ spec:
     spec:
       containers:
         - name: mcp-playwright
-          image: cortex-mcp-playwright:latest
+          image: mcr.microsoft.com/playwright/mcp:latest
           imagePullPolicy: IfNotPresent
+          command:
+            - node
+            - /app/cli.js
+          args:
+            - --headless
+            - --browser
+            - chromium
+            - --no-sandbox
+            - --port
+            - '8080'
+            - --host
+            - 0.0.0.0
           ports:
             - containerPort: 8080
           resources:
@@ -31,17 +43,9 @@ spec:
               cpu: '500m'
           env:
             - name: PORT
-              valueFrom:
-                secretKeyRef:
-                  name: cortex-secrets
-                  key: PLAYWRIGHT_MCP_PORT
-                  optional: true
+              value: '8080'
             - name: HOST
-              valueFrom:
-                secretKeyRef:
-                  name: cortex-secrets
-                  key: PLAYWRIGHT_MCP_HOST
-                  optional: true
+              value: '0.0.0.0'
             - name: BROWSER
               valueFrom:
                 secretKeyRef:
@@ -49,23 +53,11 @@ spec:
                   key: PLAYWRIGHT_MCP_BROWSER
                   optional: true
             - name: HEADLESS
-              valueFrom:
-                secretKeyRef:
-                  name: cortex-secrets
-                  key: PLAYWRIGHT_MCP_HEADLESS
-                  optional: true
+              value: 'true'
             - name: NO_SANDBOX
-              valueFrom:
-                secretKeyRef:
-                  name: cortex-secrets
-                  key: PLAYWRIGHT_MCP_NO_SANDBOX
-                  optional: true
+              value: 'true'
             - name: ALLOWED_HOSTS
-              valueFrom:
-                secretKeyRef:
-                  name: cortex-secrets
-                  key: PLAYWRIGHT_MCP_ALLOWED_HOSTS
-                  optional: true
+              value: '*'
 ---
 apiVersion: v1
 kind: Service

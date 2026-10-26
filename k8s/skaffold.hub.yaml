@@ -18,27 +18,9 @@ build:
     - image: cortex-memory-web
       context: ..
       docker: { dockerfile: hub/cortex/memory/services/web/Dockerfile, target: dev }
-    - image: cortex-mcp-memory
-      context: ..
-      docker: { dockerfile: hub/cortex/mcp/services/memory/Dockerfile, target: dev }
     - image: cortex-mcp-inspector
       context: ..
       docker: { dockerfile: hub/cortex/mcp/inspector/Dockerfile, target: dev }
-    - image: cortex-mcp-github
-      context: ..
-      docker: { dockerfile: hub/cortex/mcp/services/github/Dockerfile, target: dev }
-    - image: cortex-mcp-context7
-      context: ..
-      docker: { dockerfile: hub/cortex/mcp/services/context7/Dockerfile, target: dev }
-    - image: cortex-mcp-firecrawl
-      context: ..
-      docker: { dockerfile: hub/cortex/mcp/services/firecrawl/Dockerfile, target: dev }
-    - image: cortex-mcp-grafana
-      context: ..
-      docker: { dockerfile: hub/cortex/mcp/services/grafana/Dockerfile, target: dev }
-    - image: cortex-mcp-playwright
-      context: ..
-      docker: { dockerfile: hub/cortex/mcp/services/playwright/Dockerfile, target: dev }
     - image: studio-penpot-frontend
       context: ../hub/studio/penpot/services/frontend
       docker: { dockerfile: Dockerfile, target: dev }
