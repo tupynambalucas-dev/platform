@@ -4,6 +4,6 @@
     "composite": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts", "*.config.ts"],
+  "include": ["vite.config.ts", "*.config.ts", "plugins/**/*.ts"],
   "exclude": ["src", "dist", "node_modules"]
 }

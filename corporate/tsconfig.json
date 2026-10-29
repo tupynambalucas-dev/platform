@@ -1,8 +1,8 @@
 {
   "files": [],
   "references": [
-    { "path": "./services/web/tsconfig.build.json" },
-    { "path": "./services/api/tsconfig.build.json" },
-    { "path": "./packages/core" }
+    { "path": "./packages/core" },
+    { "path": "./services/api" },
+    { "path": "./services/web" }
   ]
 }

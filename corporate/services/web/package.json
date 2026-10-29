@@ -14,11 +14,11 @@
   "scripts": {
     "clean": "rimraf dist tsconfig.tsbuildinfo",
     "dev": "vite --mode dev",
-    "build": "tsc -p tsconfig.build.json && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .ts,.tsx .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc -b"
   },
   "dependencies": {
     "@tupynambalucas-dev/corporate-core": "workspace:*",

@@ -1,4 +1,4 @@
 {
   "files": [],
-  "references": [{ "path": "./github" }, { "path": "./mcp" }, { "path": "./provisioner" }]
+  "references": [{ "path": "./github" }, { "path": "./provisioner" }]
 }
