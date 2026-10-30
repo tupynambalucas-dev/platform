@@ -16,7 +16,7 @@ The ecosystem provides standardized, isolated tooling for version control and pr
 
 - **[infrastructure/docker/](./infrastructure/docker/)**: Contains the orchestration file ([compose.yaml](./infrastructure/docker/compose.yaml)) and global environment configurations for the containers.
 - **[services/gh/](./services/gh/)**: Contains the Dockerfile, entrypoint, and bash extensions for the GitHub CLI container.
-- **[services/git/](./services/git/)**: Contains the Dockerfile and entrypoint for the Git CLI container (includes `git-flow`).
+- **[services/git/](./services/git/)**: Contains the Dockerfile and entrypoint for the Git CLI container (includes `GitHub Flow`).
 
 > [!NOTE]
 > Repository automation scripts for generating changelogs and roadmaps are part of the `@/docs` package context.

@@ -45,7 +45,7 @@ The infrastructure is broken down into two isolated environments that deploy to 
 
 ## Required Skills
 
-When interacting with, querying, or modifying infrastructure in this bounded context, agents MUST utilize the following skills from the `k8s-expert` plugin:
+When interacting with, querying, or modifying infrastructure in this bounded context, agents MUST utilize the following skills from the `k8s` plugin:
 
-- **`k8s-docs-analyzer`**: MUST be used to analyze existing documentation in `references/` before making or proposing infrastructure changes to ensure compliance with our GitOps standards.
-- **`k8s-docs-manager`**: MUST be used whenever new K8s insights are discovered or architectural changes occur (e.g., Separation of Deployers). The agent must use this skill to update the Diátaxis folders in `references/` to reflect the new state.
+- **`k8s-docs-auditor`**: MUST be used to analyze existing documentation in `references/` before making or proposing infrastructure changes to ensure compliance with our GitOps standards.
+- **`k8s-docs-architect`**: MUST be used whenever new K8s insights are discovered or architectural changes occur (e.g., Separation of Deployers). The agent must use this skill to update the Diátaxis folders in `references/` to reflect the new state.

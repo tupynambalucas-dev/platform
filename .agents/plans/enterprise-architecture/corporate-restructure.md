@@ -404,7 +404,7 @@ Run on a dedicated branch. Use `git mv` for every move and one commit group per 
 3. Rewrite [corporate/AGENTS.md](../../../corporate/AGENTS.md) and its README to the real paths,
    the two logical sub-domains, and the dependency rule, within the 120-line router budget. Update
    the `AGENTS.md` of `collections` with one guardrail block per kind and fix the stale links in the
-   portal router (F2, F3). Activate `agent-router-expert` and `markdown-expert` for these edits.
+   portal router (F2, F3). Activate `router-architect` and `readme-architect` for these edits.
 4. Correct the two knowledge base pages (F4) with the `docusaurus-expert` skill. Do not edit the
    `pt-BR` copies; Crowdin regenerates them.
 5. Gate: `git grep` returns no match for `namespaces/portal`, `corporate/collections`,

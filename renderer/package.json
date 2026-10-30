@@ -4,7 +4,7 @@
   "private": true,
   "description": "Dynamic asset generation engine for GitHub README compilation and templates.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://docs.tupynambalucas.dev",
   "repository": {
     "type": "git",

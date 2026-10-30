@@ -4,7 +4,7 @@
   "private": true,
   "description": "Root monorepo workspace for the ecosystem.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://docs.tupynambalucas.dev",
   "repository": {
     "type": "git",
@@ -71,7 +71,6 @@
   },
   "devDependencies": {
     "@tupynambalucas-dev/agent-mesh": "github:tupynambalucas-dev/agent-mesh",
-    "@changesets/cli": "catalog:",
     "@clack/prompts": "catalog:",
     "@docusaurus/eslint-plugin": "catalog:tooling-stack",
     "@eslint-react/eslint-plugin": "catalog:web-stack",

@@ -4,7 +4,7 @@
   "private": true,
   "description": "Frontend React application for the personal portfolio and blog.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://docs.tupynambalucas.dev",
   "repository": {
     "type": "git",

@@ -44,6 +44,6 @@ Cloud environments (`staging` and `prod`) are delivered via ArgoCD GitOps, circu
 
 When performing documentation tasks in this monorepo, agents MUST activate the appropriate skill by name before beginning:
 
-- **`agent-router-expert`**: Active when creating, updating, or reviewing any `AGENTS.md` file anywhere in the monorepo.
-- **`markdown-expert`**: Active when creating, updating, or reviewing any `README.md`, `.md` skill file, or general Markdown document.
+- **`router-architect`**: Active when creating, updating, or reviewing any `AGENTS.md` file anywhere in the monorepo.
+- **`readme-architect`**: Active when creating, updating, or reviewing any `README.md`, `.md` skill file, or general Markdown document.
 - **`secrets-expert`**: Active when configuring or verifying Infisical secrets or Kubernetes secret manifests.

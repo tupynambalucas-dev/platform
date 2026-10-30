@@ -9,7 +9,7 @@ The core platform monorepo powering the tupynambalucas.dev ecosystem. Built on T
 
 ## 1. Architecture Overview
 
-The codebase is organized into isolated **Bounded Contexts**, each owning its own domain logic, infrastructure manifests, and lifecycle scripts. Multiple Skaffold profiles compose the full local Kubernetes development environment, with `platform-dev` serving as the base infrastructure foundation for all downstream services.
+The codebase is organized into isolated **Bounded Contexts**, each owning its own domain logic, infrastructure manifests, and lifecycle scripts. Multiple Skaffold profiles compose the full local Kubernetes mainment environment, with `platform-dev` serving as the base infrastructure foundation for all downstream services.
 
 ```mermaid
 graph TD
@@ -222,14 +222,14 @@ pnpm format:write
 This repository adheres to the **Git Flow** branching model with cryptographic SSH commit signing:
 
 - **`main`**: Production-ready releases. Direct commits are restricted; requires signed commits and verified CI.
-- **`develop`**: Primary integration branch for active development.
-- **`feature/*`**: Feature branches branched from `develop`.
+- **`main`**: Primary integration branch for active mainment.
+- **`feat/*`**: Feature branches branched from `main`.
 
 ```bash
-# Create a new version changeset
-pnpm version:changeset
+# Create a new version
+pnpm version:
 
-# Bump package versions based on merged changesets
+# Bump package versions based on merged s
 pnpm version:bump
 ```
 
@@ -237,4 +237,4 @@ pnpm version:bump
 
 ## 7. License
 
-This project is licensed under the [MIT License](./LICENSE.md).
+This project is licensed under the [Apache-2.0 License](./LICENSE.md).

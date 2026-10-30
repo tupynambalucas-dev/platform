@@ -18,7 +18,7 @@ Guidelines and constraints that the AI must follow. These markdown files are aut
 
 ### `skills/`
 
-On-demand, progressive-disclosure markdown files that teach the agent complex multi-step workflows, runbooks, and expert personas (e.g., `agent-router-expert`, `markdown-expert`). Skills are only fully loaded into the context window when explicitly requested or triggered.
+On-demand, progressive-disclosure markdown files that teach the agent complex multi-step workflows, runbooks, and expert personas (e.g., `router-architect`, `readme-architect`). Skills are only fully loaded into the context window when explicitly requested or triggered.
 
 ### `scripts/`
 
