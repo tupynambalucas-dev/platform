@@ -1,10 +1,10 @@
 {
   "entries": [
     {
-      "path": "node_modules/@tupynambalucas-dev/agent-mesh"
+      "path": "./plugins/k8s"
     },
     {
-      "path": ".agents/plugins"
+      "path": "../../agent-mesh/plugins/packages"
     }
   ]
 }

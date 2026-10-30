@@ -1,48 +1,16 @@
-## Description
+## Summary
 
-<!-- Describe the changes introduced by this Pull Request. Include relevant context and technical rationale. -->
+Concise technical description of changes introduced.
 
-## Conventional Commit Reference
+## Changes Introduced
 
-All commits must follow the Conventional Commits specification. Ensure your PR title matches this standard:
+-
 
-`[type]([scope]): [description]`
+## Verification Checklist
 
-- **Types**: `feat` | `fix` | `docs` | `style` | `refactor` | `perf` | `test` | `chore`
-- **Scopes**: `hub` | `profile` | `studio` | `tools` | `docs` | `deps`
-
----
-
-## Technical Guardrails Checklist
-
-Please verify that your code adheres to all project quality standards before requesting review:
-
-- [ ] **Strict English-First (en-US)**: Technical logic, comments, variable names, and changelogs are written in US English.
-- [ ] **Zero Emojis**: Absolutely no emojis are used in the code, comments, or documentation files.
-- [ ] **Strict Boolean Logic**: Checked that all JSX conditional expressions are written explicitly (e.g. `{isValid === true && <Component />}` instead of `{isValid && <Component />}`).
-- [ ] **No Floating Promises**: Handled or explicitly voided all asynchronous calls (e.g., `void asyncFn()`).
-- [ ] **Changeset Generated**: Run `pnpm version:changeset` if any packages under `packages/` or workspaces have changed.
-- [ ] **Local Verification**: Passed all local verification suites (`pnpm lint` and `pnpm typecheck`).
-
----
-
-## Testing & Quality Assurance
-
-### Manual Test Steps
-
-<!-- Detail how to manually verify these changes. Provide exact steps, configuration setup, or commands to execute inside containers. -->
-
-1.
-2.
-
-### Automated Test Coverage
-
-- [ ] Automated tests added/updated.
-- [ ] No test regressions.
-
----
-
-## Deployment & Migrations
-
-- [ ] Schema changes or database migrations are required (explain below if checked).
-- [ ] New environment variables are required (ensure `.env.example` files are updated accordingly).
+- [ ] **Branch**: Branched from `main` using Conventional Commits prefix (`feat/`, `fix/`, `docs/`, `chore/`, `refactor/`, `ci/`, `perf/`, `test/`, `build/`, `style/`, `revert/`, `hotfix/`).
+- [ ] **Commit Signatures**: All commits signed via SSH (`git commit -S`).
+- [ ] **Conventional Commits**: Format adheres to `<type>[optional (<scope>)][!]: <description>` (`<= 72` chars recommended, `<= 100` max).
+- [ ] **Scope Compliance**: Scoped cleanly (`corporate`, `cortex`, `studio`, `k8s`, `renderer`, `shared`, `tools`, `deps`).
+- [ ] **Quality Gates**: Local tests, builds, and type checks pass cleanly.
+- [ ] **Zero Emojis & Secrets**: No emojis or plaintext credentials in code, documentation, or PR metadata.

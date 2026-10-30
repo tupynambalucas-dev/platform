@@ -4,9 +4,7 @@ All updates, improvements, and new features of tupynambalucas.dev documented in 
 
 ## Release - v1.0.0 (2026-10-03)
 
-Welcome to the first official major release of %PROJECT_DOMAIN% (`v1.0.0`)! This update establishes our core architecture, localization infrastructure, and unifies our content strategy.
-
-{/* truncate */}
+Welcome to the first official major release of tupynambalucas.dev (`v1.0.0`)! This update establishes our core architecture, localization infrastructure, and unifies our content strategy.
 
 ### Highlights
 

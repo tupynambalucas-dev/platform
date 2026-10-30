@@ -16,4 +16,4 @@ This directory houses the authoritative Diataxis documentation for the `tupynamb
 - [Configuration as Code](./explanation/configuration-as-code.md): Native configuration files and `configMapGenerator`.
 - [Separation of Deployers](./explanation/separation-of-deployers.md): Helm for third-party charts, Kustomize for first-party manifests.
 
-> **Note**: This documentation is maintained through the `k8s-docs-manager` skill of the `k8s-expert` plugin whenever the `k8s/` workspace changes.
+> **Note**: This documentation is maintained through the `k8s-docs-architect` skill of the `k8s` plugin whenever the `k8s/` workspace changes.

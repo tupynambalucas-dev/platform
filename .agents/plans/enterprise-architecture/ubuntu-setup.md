@@ -47,13 +47,13 @@ wsl --install Ubuntu-24.04 --name tupynambalucasdev-ubuntu
 During the initial initialization prompt, enter the requested credentials:
 
 - **UNIX username**: `tupy`
-- **Password**: `Namba47913@`
+- **Password**: `<REDACTED_UNIX_PASSWORD>`
 
 Alternatively, configure the user and credentials non-interactively as root from Windows PowerShell:
 
 ```powershell
 # Create user 'tupy' with sudo and docker group memberships
-wsl -d tupynambalucasdev-ubuntu -u root -e bash -c "useradd -m -s /bin/bash -G sudo tupy && echo 'tupy:Namba47913@' | chpasswd && printf '[boot]\nsystemd=true\n\n[user]\ndefault=tupy\n' > /etc/wsl.conf"
+wsl -d tupynambalucasdev-ubuntu -u root -e bash -c "useradd -m -s /bin/bash -G sudo tupy && echo 'tupy:<REDACTED_UNIX_PASSWORD>' | chpasswd && printf '[boot]\nsystemd=true\n\n[user]\ndefault=tupy\n' > /etc/wsl.conf"
 
 # Restart WSL to apply systemd and default user settings
 wsl --shutdown

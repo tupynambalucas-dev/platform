@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: File a structured bug report to help us fix issues in the monorepo.
-title: 'bug([scope]): '
+title: 'fix([scope]): '
 labels: bug, triage
 ---
 

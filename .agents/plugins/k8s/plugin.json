@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "k8s",
+  "version": "1.0.0",
+  "description": "Kubernetes infrastructure GitOps documentation, architectural auditing, and cluster manifests governance plugin.",
+  "license": "Apache-2.0",
+  "keywords": ["kubernetes", "k8s", "gitops", "infrastructure", "k3d", "traefik"],
+  "skills": "./skills/",
+  "rules": "./rules/"
+}

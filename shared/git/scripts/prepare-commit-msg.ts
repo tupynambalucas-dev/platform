@@ -16,10 +16,10 @@ if (fs.existsSync(reportFile)) {
       const originalMsg = fs.readFileSync(commitMsgFile, 'utf-8');
       const updatedMsg = originalMsg.trim() + '\n' + reportContent;
       fs.writeFileSync(commitMsgFile, updatedMsg, 'utf-8');
-      console.log('📋 [PREPARE-COMMIT-MSG] Appended lint error report to commit message.');
+      console.log(' [PREPARE-COMMIT-MSG] Appended lint error report to commit message.');
     }
   } catch (err) {
-    console.error('⚠️ [PREPARE-COMMIT-MSG] Error appending lint report:', err);
+    console.error('️ [PREPARE-COMMIT-MSG] Error appending lint report:', err);
   } finally {
     try {
       fs.unlinkSync(reportFile);

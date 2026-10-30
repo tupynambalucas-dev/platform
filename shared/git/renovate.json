@@ -3,7 +3,7 @@
   "extends": ["config:best-practices", "group:monorepos", "group:recommended"],
   "schedule": ["before 5am on Monday"],
   "timezone": "America/Sao_Paulo",
-  "baseBranches": ["develop"],
+  "baseBranches": ["main"],
   "packageRules": [
     {
       "description": "Lock TypeScript to v6.x due to TS 7.0 AST incompatibility with the ESLint ecosystem",

@@ -1,5 +1,5 @@
 ---
-name: k8s-docs-manager
+name: k8s-docs-architect
 description: Use this skill to create, update, and manage GitOps documentation inside the infrastructure references directory using the Diátaxis framework. Trigger this whenever infrastructure changes (Helm/Kustomize) occur to document the new state.
 ---
 
@@ -21,7 +21,7 @@ You MUST use this skill to update or create documentation when any of the follow
 All documentation MUST be placed into the appropriate quadrant within the documentation directory:
 
 - **tutorials/**: Use for step-by-step setup instructions for new developers.
-- **guides/**: Use for goal-oriented tasks (e.g., "How to expose a new microservice", "How to inject RBAC rules").
+- **how-to-guides/**: Use for goal-oriented tasks (e.g., "How to expose a new microservice", "How to inject RBAC rules").
 - **reference/**: Use for pure technical specifications, manifest requirements, API versions, and schema definitions. Avoid using this quadrant if the document fits better as a guide or explanation, to prevent redundancy with the root `references/` name.
 - **explanation/**: Use for architectural decision records (ADRs) and deep dives (e.g., "Why we separate Helm and Kustomize").
 

@@ -44,4 +44,4 @@ When creating, updating, or analyzing custom Agent Skills within this bounded co
 When agents author technical documentation in the repository:
 
 1. **Diátaxis Framework**: Documentation intended for knowledge portals or documentation hubs SHOULD be structured into four quadrants (`tutorials`, `guides`, `reference`, `explanation`). Activate the `docusaurus-expert` skill when managing Docusaurus-based knowledge bases.
-2. **Documentation Formatting**: Follow strict Markdown/MDX formatting standards, avoiding broken links and preserving document structure. Activate the `markdown-expert` skill when managing general repository documentation.
+2. **Documentation Formatting**: Follow strict Markdown/MDX formatting standards, avoiding broken links and preserving document structure. Activate the `readme-architect` skill when managing general repository documentation.
