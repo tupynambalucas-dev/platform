@@ -33,8 +33,6 @@ developer inspector, and containerized downstream tool server adapters.
   - [memory](./services/memory/): RAG vector search, episodic chat history, knowledge graph
     traversal, and document ingestion tools (`search_knowledge`, `store_episodic`, `query_graph`,
     `ingest_document`).
-  - [playwright](./services/playwright/): Headless browser automation and accessibility snapshot
-    tools using Chromium.
 
 ---
 
