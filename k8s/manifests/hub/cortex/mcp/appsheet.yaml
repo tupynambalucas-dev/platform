@@ -24,9 +24,18 @@ spec:
             - sh
             - -c
           args:
-            - npx -y @tupynambalucas-dev/cortex-mcp-appsheet
+            - npx -y @tupynambalucas-dev/mcp-appsheet --http
           ports:
             - containerPort: 8080
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
           resources:
             requests:
               memory: '64Mi'
@@ -34,27 +43,42 @@ spec:
             limits:
               memory: '256Mi'
               cpu: '200m'
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 2
           env:
             - name: PORT
               value: '8080'
+            - name: MCP_TRANSPORT
+              value: 'http'
             - name: APPSHEET_APP_ID
               valueFrom:
                 secretKeyRef:
                   name: cortex-secrets
                   key: APPSHEET_APP_ID
-                  optional: true
             - name: APPSHEET_APPLICATION_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
                   name: cortex-secrets
                   key: APPSHEET_APPLICATION_ACCESS_KEY
-                  optional: true
             - name: NODE_AUTH_TOKEN
               valueFrom:
                 secretKeyRef:
                   name: cortex-secrets
                   key: GITHUB_PACKAGES_TOKEN
-                  optional: true
 ---
 apiVersion: v1
 kind: Service

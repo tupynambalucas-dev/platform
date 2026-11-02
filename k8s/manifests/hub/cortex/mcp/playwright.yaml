@@ -1,0 +1,90 @@
+# MCP Playwright Service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-playwright
+  namespace: cortex
+  labels:
+    app: mcp-playwright
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-playwright
+  template:
+    metadata:
+      labels:
+        app: mcp-playwright
+    spec:
+      containers:
+        - name: mcp-playwright
+          image: mcr.microsoft.com/playwright/mcp:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - node
+            - /app/cli.js
+          args:
+            - --headless
+            - --browser
+            - chromium
+            - --no-sandbox
+            - --port
+            - '8080'
+            - --host
+            - 0.0.0.0
+          ports:
+            - containerPort: 8080
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
+          resources:
+            requests:
+              memory: 512Mi
+              cpu: 250m
+            limits:
+              memory: 2Gi
+              cpu: 1000m
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 2
+          env:
+            - name: PORT
+              value: '8080'
+            - name: HOST
+              value: 0.0.0.0
+            - name: BROWSER
+              value: chromium
+            - name: HEADLESS
+              value: 'true'
+            - name: NO_SANDBOX
+              value: 'true'
+            - name: ALLOWED_HOSTS
+              value: '*'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcp-playwright
+  namespace: cortex
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: mcp-playwright
