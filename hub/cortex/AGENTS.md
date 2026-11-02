@@ -54,6 +54,7 @@ flowchart TD
     MCPGH["mcp-github (Port 8080)"]
     MCPFC["mcp-firecrawl (Port 8080)"]
     MCPGraf["mcp-grafana (Port 8080)"]
+    MCPPw["mcp-playwright (Port 8080)"]
     MCPC7["context7 (Cloud SaaS)"]
     MCPInsp["mcp-inspector (Port 6274)"]
 
@@ -61,6 +62,7 @@ flowchart TD
     AgentGW --> MCPGH
     AgentGW --> MCPFC
     AgentGW --> MCPGraf
+    AgentGW --> MCPPw
     AgentGW --> MCPC7
     MCPInsp --> AgentGW
   end
@@ -90,6 +92,7 @@ flowchart TD
 | `mcp-github`     | 8080          | 8080 (Cluster)        | Streamable HTTP    |
 | `mcp-firecrawl`  | 8080          | 8080 (Cluster)        | Streamable HTTP    |
 | `mcp-grafana`    | 8080          | 8080 (Cluster)        | Streamable HTTP    |
+| `mcp-playwright` | 8080          | 8080 (Cluster)        | Streamable HTTP    |
 
 ---
 

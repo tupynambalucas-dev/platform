@@ -31,6 +31,14 @@ spec:
             - '*'
           ports:
             - containerPort: 8080
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
           resources:
             requests:
               memory: '64Mi'
@@ -38,25 +46,36 @@ spec:
             limits:
               memory: '256Mi'
               cpu: '200m'
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 2
           env:
             - name: GRAFANA_URL
               valueFrom:
                 secretKeyRef:
                   name: cortex-secrets
                   key: GRAFANA_URL
-                  optional: true
             - name: GRAFANA_BASIC_AUTH_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: platform-secrets
                   key: GRAFANA_ADMIN_USER
-                  optional: true
             - name: GRAFANA_BASIC_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: platform-secrets
                   key: GRAFANA_ADMIN_PASSWORD
-                  optional: true
 ---
 apiVersion: v1
 kind: Service

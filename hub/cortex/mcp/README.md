@@ -9,7 +9,7 @@ The `cortex/mcp/` directory houses the Model Context Protocol (MCP) data plane s
 - **Protocol**: Model Context Protocol (MCP) over Streamable HTTP and SSE transports
 - **Guardrails**: Node.js 22, gRPC (`@grpc/grpc-js`, `@grpc/proto-loader`), Protocol Buffers
 - **Inspector**: `@modelcontextprotocol/inspector`
-- **Adapters**: GitHub MCP Server, Firecrawl MCP, Grafana MCP, Custom Memory MCP
+- **Adapters**: GitHub MCP Server, Firecrawl MCP, Grafana MCP, Playwright MCP, Custom Memory MCP
 
 ---
 
@@ -23,6 +23,7 @@ The `cortex/mcp/` directory houses the Model Context Protocol (MCP) data plane s
   - **[github/](./services/github/README.md)**: GitHub REST/GraphQL API automation for repositories, issues, PRs, and Copilot ([github/README.md](./services/github/README.md)).
   - **[grafana/](./services/grafana/README.md)**: Observability tools for Prometheus metrics, Loki logs, Tempo traces, and Pyroscope flamegraphs ([grafana/README.md](./services/grafana/README.md)).
   - **[memory/](./services/memory/README.md)**: Semantic RAG vector retrieval, episodic chat persistence, and entity graph querying ([memory/README.md](./services/memory/README.md)).
+  - **[playwright/](./services/playwright/README.md)**: Containerized headless Chromium browser automation, accessibility snapshots, and form interactions ([playwright/README.md](./services/playwright/README.md)).
 
 ---
 

@@ -49,6 +49,14 @@ spec:
             - '8080'
           ports:
             - containerPort: 8080
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
           resources:
             requests:
               memory: '64Mi'
@@ -56,13 +64,23 @@ spec:
             limits:
               memory: '256Mi'
               cpu: '200m'
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 2
           env:
             - name: PORT
-              valueFrom:
-                secretKeyRef:
-                  name: cortex-secrets
-                  key: KUBECTL_MCP_PORT
-                  optional: true
+              value: '8080'
 ---
 apiVersion: v1
 kind: Service
