@@ -1,35 +1,59 @@
-# AI Agents Configuration Hub
+# AI Agents Configuration Hub (`.agents`)
 
-The `.agents/` directory is the Bounded Context for AI behavior customization, tool integration, and knowledge routing within the workspace.
+The `.agents/` directory is the Bounded Context for AI behavior customization, tool integration, and knowledge routing within the `platform` monorepo.
 
-This directory is natively supported by the **Antigravity (AGY)** agent architecture and uses Domain-Driven Design (DDD) to encapsulate AI capabilities and constraints.
+---
 
-## Architecture
+## Architecture & Integration
 
-Our AI configuration is split into distinct logical units based on their lifecycle and injection behavior:
+Our AI agent configuration combines local domain plugins with the enterprise `@tupynambalucas-dev/agent-mesh` umbrella package:
 
-### `plugins/`
+### 1. Plugin Discovery Manifest (`plugins.json`)
 
-Namespaced bundles that package Skills, Rules, Hooks, and MCP Server Configurations into a single deployable unit. For example, the `cortex` plugin encapsulates the `agentgateway` MCP server connection alongside rules that teach the AI how to automatically use `firecrawl` and `context7` when requested. The `cortex-fallback` plugin provides local `pnpm`-driven instances of these same MCP servers for when the primary gateway infrastructure is offline.
+```json
+{
+  "entries": [
+    {
+      "path": "./plugins/k8s"
+    },
+    {
+      "path": "node_modules/@tupynambalucas-dev/agent-mesh/plugins/packages"
+    }
+  ]
+}
+```
 
-### `rules/`
+- **`./plugins/k8s`**: Local Kubernetes infrastructure plugin providing the `k8s-docs-architect` and `k8s-docs-auditor` skills.
+- **`node_modules/@tupynambalucas-dev/agent-mesh/plugins/packages`**: Upstream organizational plugins (`appsheet`, `atelier`, `docusaurus`, `github-flow`, `github-org`, `gwork`, `repo`, `research`, `secrets`, `web`).
 
-Guidelines and constraints that the AI must follow. These markdown files are automatically discovered and injected into the agent's context based on directory hierarchy or specific trigger conditions (e.g., enforcing TypeScript strictness or naming conventions).
+### 2. Dependency Management
 
-### `skills/`
+The `@tupynambalucas-dev/agent-mesh` package is pinned via `plugins-stack` in [`pnpm-workspace.yaml`](../pnpm-workspace.yaml) and installed via the root [`package.json`](../package.json):
 
-On-demand, progressive-disclosure markdown files that teach the agent complex multi-step workflows, runbooks, and expert personas (e.g., `router-architect`, `readme-architect`). Skills are only fully loaded into the context window when explicitly requested or triggered.
+```yaml
+catalogs:
+  plugins-stack:
+    '@tupynambalucas-dev/agent-mesh': 'github:tupynambalucas-dev/agent-mesh'
+```
 
-### `scripts/`
+### 3. Sovereign MCP Launchers
 
-Agent-authored utility scripts (Node.js, Bash, Python) meant for repository manipulation and version-controlled automation tasks.
+MCP servers bundled in `@tupynambalucas-dev/agent-mesh` execute via self-contained launchers (`scripts/launcher.cjs`) without requiring build steps or runtime dependency resolutions from the consumer project.
 
-### `plans/`
+---
 
-Temporary, markdown-based plan artifacts outlining execution steps for complex tasks. These files track the progress of long-running refactors across the monorepo.
+## Directory Layout
 
-## Contribution Guidelines
+- [plugins.json](./plugins.json): Runtime plugin discovery manifest.
+- [AGENTS.md](./AGENTS.md): Bounded context router for `.agents/`.
+- [plugins/](./plugins/): Local monorepo-specific plugins (`k8s`).
+- [rules/](./rules/): Local rule definitions.
+- [skills/](./skills/): Local on-demand skills.
+- [scripts/](./scripts/): Agent utility scripts.
+- [plans/](./plans/): Refactoring and execution plan artifacts.
 
-1. **Self-Contained Logic**: Skills and Plugins must be 100% self-contained. Do not create relative links pointing to temporary plans or other transient context.
-2. **Portability and Decoupling**: All skills, rules, and plugins must remain completely decoupled from specific host workspace names, domains, or internal folder paths so that the entire `.agents/` directory can be transferred to any project out-of-the-box.
-3. **No Root Scripts**: Never place utility or scratch scripts in the root directory. Save permanent scripts to `scripts/` or use the isolated `.gemini/brain/scratch/` directory for transient execution.
+---
+
+## Navigation
+
+- Parent Workspace: [Platform Monorepo Root](../README.md)
