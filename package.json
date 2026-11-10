@@ -75,6 +75,7 @@
     "@docusaurus/eslint-plugin": "catalog:tooling-stack",
     "@eslint-react/eslint-plugin": "catalog:web-stack",
     "@eslint/js": "catalog:tooling-stack",
+    "@tupynambalucas-dev/agent-mesh": "catalog:plugins-stack",
     "@tupynambalucas-dev/shared-config": "workspace:*",
     "@types/node": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:tooling-stack",

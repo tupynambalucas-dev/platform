@@ -339,6 +339,10 @@ catalogs:
     wrangler:
       specifier: ^4.140.0
       version: 4.149.0
+  plugins-stack:
+    '@tupynambalucas-dev/agent-mesh':
+      specifier: github:tupynambalucas-dev/agent-mesh
+      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b
   shared-stack:
     axios:
       specifier: ^1.20.0
@@ -468,7 +472,7 @@ importers:
         specifier: catalog:tooling-stack
         version: 10.0.1(eslint@10.11.0(jiti@2.7.0)(supports-color@10.2.2))
       '@tupynambalucas-dev/agent-mesh':
-        specifier: github:tupynambalucas-dev/agent-mesh
+        specifier: catalog:plugins-stack
         version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*

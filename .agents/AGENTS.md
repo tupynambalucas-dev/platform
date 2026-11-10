@@ -1,47 +1,45 @@
 <context-hierarchy>
   <parent src="../AGENTS.md" type="global-rules" />
   <system-instruction>
-    AGENT: You are operating in the .agents bounded context. If you have not read "../AGENTS.md" in this session, stop now and read it using your file-reading tools before proceeding.
+    AGENT: You are operating in the .agents bounded context of tupynambalucas-dev/platform. If you have not read ../AGENTS.md in this session, stop now and read it using your file-reading tools before proceeding. Global constraints are mandatory.
   </system-instruction>
 </context-hierarchy>
 
 # Bounded Context: .agents
 
-This bounded context ([.agents/](./)) manages the lifecycle, personas, tools, and domain-specific knowledge for AI agents operating within the repository. It strictly adheres to the Antigravity (AGY) customization architecture.
+This bounded context ([.agents/](./)) manages the lifecycle, personas, tools, and domain-specific knowledge for AI agents operating within the `platform` monorepo. It strictly adheres to the Antigravity (AGY) customization architecture.
 
 ---
 
 ## 1. Directory Architecture
 
-- **[plans/](./plans/)**: Temporary, markdown-based execution plans for complex refactors.
-- **[plugins/](./plugins/)**: Bundled MCP (Model Context Protocol) definitions, server lifecycle configs, and associated rules (e.g., the `cortex` plugin routing to `cortex_agentgateway`).
-- **[rules/](./rules/)**: Global or localized markdown constraints that are automatically injected into the agent's context based on location or trigger conditions.
-- **[scripts/](./scripts/)**: MUST be used ONLY for utility scripts (Node.js, Bash) that are executed by AI agents (both temporary and permanent). Human-operated scripts do not belong here.
-- **[skills/](./skills/)**: Self-contained Markdown instruction files defining expert personas, validation workflows, and multi-step runbooks. Loaded on demand via progressive disclosure.
+- **[plugins.json](./plugins.json)**: Antigravity plugin discovery manifest mounting both local GitOps plugins (`./plugins/k8s`) and the enterprise `@tupynambalucas-dev/agent-mesh` umbrella package (`node_modules/@tupynambalucas-dev/agent-mesh/plugins/packages`).
+- **[plugins/](./plugins/)**: Local monorepo-specific domain plugins (specifically [plugins/k8s/](./plugins/k8s/) for Kubernetes GitOps architecture).
+- **[rules/](./rules/)**: Local markdown constraints automatically injected into the agent context based on location or trigger conditions.
+- **[scripts/](./scripts/)**: Utility scripts executed strictly by AI agents.
+- **[skills/](./skills/)**: Self-contained Markdown instruction files defining expert personas, validation workflows, and runbooks.
+- **[plans/](./plans/)**: Temporary execution plans for complex refactors.
 
 ---
 
-## 2. Agent Constraints
+## 2. Agent Constraints & Umbrella Consumption
 
-1. **Root Script Ban**: Agents MUST NEVER create temporary or utility scripts (e.g., `scratch.js`, `update.js`) directly in the monorepo root.
-2. **Script Location**: The [scripts/](./scripts/) directory is STRICTLY for scripts executed by AI agents (temporary or permanent). Agents MUST save their scripts here instead of the root directory. Transient scripts can optionally be saved in the agent's isolated `brain/scratch/` directory.
-3. **Cross-Boundary References**: Customizations inside [skills/](./skills/) or [plugins/](./plugins/) MUST be 100% self-contained. They MUST NOT contain relative links pointing to transient folders like [plans/](./plans/).
-4. **Plugin Encapsulation**: Any new MCP server integration MUST be encapsulated inside a named plugin directory within [plugins/](./plugins/) containing a `plugin.json` and `mcp_config.json`.
-5. **Concrete Nomenclature**: All contextual configurations MUST use concrete project names and identifiers appropriate to the host repository. Avoid introducing unresolved template placeholder tokens unless the host workspace explicitly utilizes an AST templating engine.
-6. **Environment Variables**: When generating or updating `.env.example` files, agents MUST replace all sensitive values with explicit uppercase placeholders matching the key name (e.g., `API_KEY=<YOUR_API_KEY>`). Agents MUST use native shell regex tools (e.g., `sed` or PowerShell `-replace`) to scrub these files and MUST NEVER use inline Node.js scripts parsing multiline strings, as cross-platform line-ending issues cause silent failures and secret leaks.
-7. **MCP Fallback Routing**: When the primary `cortex_agentgateway` (provided by the [cortex](./plugins/cortex/) plugin) or its MCP services return connection errors or are offline due to the infrastructure being down, agents MUST automatically fallback to using the local MCP tools provided by the [cortex-fallback](./plugins/cortex-fallback/) plugin.
-
----
-
-## 3. Required Skill
-
-When creating, updating, or analyzing custom Agent Skills within this bounded context, agents MUST activate the `skill-expert` skill by name before beginning.
+1. **Umbrella Package Consumption**: Monorepo-level agent capabilities are consumed via the `@tupynambalucas-dev/agent-mesh` umbrella package declared in [`pnpm-workspace.yaml`](../pnpm-workspace.yaml) (`plugins-stack` catalog) and root [`package.json`](../package.json).
+2. **Deterministic Plugin Discovery**: [`plugins.json`](./plugins.json) registers:
+   - `./plugins/k8s`: Sovereign Kubernetes documentation skills (`k8s-docs-architect`, `k8s-docs-auditor`).
+   - `node_modules/@tupynambalucas-dev/agent-mesh/plugins/packages`: All 10 domain plugins (`appsheet`, `atelier`, `docusaurus`, `github-flow`, `github-org`, `gwork`, `repo`, `research`, `secrets`, `web`).
+3. **Sovereign MCP Execution**: MCP servers run via their self-contained entrypoints (`scripts/launcher.cjs` and `dist/bin.cjs`) with zero external dependency compilation required.
+4. **Root Script Ban**: Agents MUST NEVER create temporary or utility scripts directly in the monorepo root. Use `.agents/scripts/` or the isolated `brain/scratch/` directory.
+5. **Environment Configuration**: Sensitive environment variables in `.env.example` must follow the enterprise template with `<YOUR_VARIABLE_NAME>` placeholders.
 
 ---
 
-## 4. Documentation Rules (Diátaxis Framework)
+## 3. Required Skills
 
-When agents author technical documentation in the repository:
+When authoring or modifying customizations within this workspace, agents MUST activate the appropriate skill by name:
 
-1. **Diátaxis Framework**: Documentation intended for knowledge portals or documentation hubs SHOULD be structured into four quadrants (`tutorials`, `guides`, `reference`, `explanation`). Activate the `docusaurus-expert` skill when managing Docusaurus-based knowledge bases.
-2. **Documentation Formatting**: Follow strict Markdown/MDX formatting standards, avoiding broken links and preserving document structure. Activate the `readme-architect` skill when managing general repository documentation.
+- **`k8s-docs-architect` & `k8s-docs-auditor`**: When authoring or auditing Kubernetes manifests and GitOps documentation.
+- **`router-architect`**: When designing or updating `AGENTS.md` context routers.
+- **`skill-architect`**: When authoring or refining `SKILL.md` instruction files.
+- **`plugin-architect`**: When managing `plugins.json` or domain plugin manifests.
+- **`readme-architect` & `monorepo-architect`**: When managing documentation navigation or monorepo workspace dependencies.
