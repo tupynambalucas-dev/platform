@@ -164,7 +164,7 @@ catalogs:
     'fastify-plugin': ^6.0.0
     'fastify-type-provider-zod': ^7.0.0
     'ioredis': 6.0.0
-    'mongoose': ^9.10.2
+    'mongoose': ^9.11.4
     'pino-roll': '^4.0.0'
     'sdk-node-apis-efi': ^2.0.1
     # Dev Dependencies

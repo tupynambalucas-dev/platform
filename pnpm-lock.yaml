@@ -270,8 +270,8 @@ catalogs:
       specifier: 6.0.0
       version: 6.0.0
     mongoose:
-      specifier: ^9.10.2
-      version: 9.11.1
+      specifier: ^9.11.4
+      version: 9.12.1
     pino-roll:
       specifier: ^4.0.0
       version: 4.0.0
@@ -342,7 +342,7 @@ catalogs:
   plugins-stack:
     '@tupynambalucas-dev/agent-mesh':
       specifier: github:tupynambalucas-dev/agent-mesh
-      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b
+      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/99d45475c038eb9cde298879b7b601f48e1d9304
   shared-stack:
     axios:
       specifier: ^1.20.0
@@ -474,7 +474,7 @@ importers:
         version: 10.0.1(eslint@10.11.0(jiti@2.7.0)(supports-color@10.2.2))
       '@tupynambalucas-dev/agent-mesh':
         specifier: catalog:plugins-stack
-        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b
+        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/99d45475c038eb9cde298879b7b601f48e1d9304
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
         version: link:shared/config
@@ -625,7 +625,7 @@ importers:
         version: 6.0.0(supports-color@10.2.2)
       mongoose:
         specifier: catalog:api-stack
-        version: 9.11.1
+        version: 9.12.1
       pino-roll:
         specifier: catalog:api-stack
         version: 4.0.0
@@ -797,7 +797,7 @@ importers:
         version: 4.0.3
       mongoose:
         specifier: catalog:api-stack
-        version: 9.11.1
+        version: 9.12.1
       zod:
         specifier: catalog:shared-stack
         version: 4.6.5
@@ -2252,6 +2252,9 @@ packages:
   '@smithy/core@3.35.2':
     resolution: {integrity: sha512-ejTukBuP/Pg3t9N8Ux+0zKsXeHWm7p6W3HbXFOyltKasSxZwCFmvTut7kBdZSCF3m9y1bXXyVu6p2xuMFcsTyQ==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/credential-provider-imds@4.5.2':
     resolution: {integrity: sha512-A9uSdn72ozbRUSit0eib0TW7nXuNPlaeM0zcGkJ+nE6tFcSDbnmtwoxbTCFBukVQcszDAyvsd7+rTduPTXpygg==}
@@ -2534,9 +2537,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b':
-    resolution: {gitHosted: true, integrity: sha512-7r7lrWZ8OP2jNkubvOHeyvvHlQ2NbV63ekkUdfPdyTk8XcsAptLSML75mBaFUahm3FGkd6VshPujO7rXaVLusA==, tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b}
-    version: 1.0.0
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/99d45475c038eb9cde298879b7b601f48e1d9304':
+    resolution: {gitHosted: true, integrity: sha512-1aGEk8O4vNeJ9iHLjEDl+B+Rs+A9Dba44OXBaGW7DaI9LGzlfSj0BC/pazYcoIqW4CtxpFcIRoRiB5TNh/Cieg==, tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/99d45475c038eb9cde298879b7b601f48e1d9304}
+    version: 1.2.0
 
   '@turbo/darwin-64@2.11.5':
     resolution: {integrity: sha512-KdY4y7BBjIisl+jAkb3FFaRjClGqHyaeHCcVcCT8LBzFFwUu6thgfxyRZAx0uL4KoxLmH+iOan8UhVf/aDDcaA==}
@@ -4148,8 +4151,8 @@ packages:
     resolution: {integrity: sha512-4+5mNNf4vZDSwPhKprKwz3330iisPrb08JyMgbsdFrimBCKNHecua/WBwvVg3n7vwx0C1ARjfhwIpbrbd9n5wg==}
     engines: {node: '>=12'}
 
-  kareem@3.4.0:
-    resolution: {integrity: sha512-JAKhnR4S027v/8949QXNInRskgETCg9rFUMi1VjhGbjX+XltCAAEFcXykkSocNkom1kc66EMJfjWvhj87BDQKg==}
+  kareem@3.4.1:
+    resolution: {integrity: sha512-UlgCAFNAdk/HLSsbfkmbH8pJqpEN52Ek8RG53Ys1i3Q3gbCQruSrWpplZlgIGyDHX/LNoLW97ei3OG43s7UhUA==}
     engines: {node: '>=18.0.0'}
 
   keyv@5.6.0:
@@ -4622,8 +4625,8 @@ packages:
     resolution: {integrity: sha512-ZoS07RoFqpKYQwAk59qmrx8+jJHNHU30UjlU96QktiGn1ltvDr+vCznLX5DiUBLEpMAHatHNWV1nM/74ul66kA==}
     engines: {node: '>=20.19.0'}
 
-  mongodb@7.7.0:
-    resolution: {integrity: sha512-XG1xXEqyouAV8GCb3PuRaujofeXKpAJAPvXYWZgHl6Dz4QHSJ1nRLl0+GpqaLTwKvC0RFE9truOur34RNFY1nw==}
+  mongodb@7.8.0:
+    resolution: {integrity: sha512-p2NKagbQ41+daACG/ZSvhTzeAo+DoEyWE9Cmpf/SyP3pTC43+X0mwKE/44PpKtCxp5wOxnXz+t2pXEZRSkt9Yg==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.806.0
@@ -4649,16 +4652,16 @@ packages:
       socks:
         optional: true
 
-  mongoose@9.11.1:
-    resolution: {integrity: sha512-fVtjTVACOtAb0PjDDF+O5NebcEJy5JpAH+AXk16/5i36w38YkW6MZ+KWV54bdIOJFymDz1VjjA5Xg6L2QfjQjQ==}
+  mongoose@9.12.1:
+    resolution: {integrity: sha512-wPw1NKurTDShT+kr/JJvhdwPKIJkxFJv5GEbv++QahN8snPR9Fp/BFg6nQbbCyUHBB8DexwwlCQW6SfBD99QCg==}
     engines: {node: '>=20.19.0'}
 
   mpath@0.9.0:
     resolution: {integrity: sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==}
     engines: {node: '>=4.0.0'}
 
-  mquery@6.0.0:
-    resolution: {integrity: sha512-b2KQNsmgtkscfeDgkYMcWGn9vZI9YoXh802VDEwE6qc50zxBFQ0Oo8ROkawbPAsXCY1/Z1yp0MagqsZStPWJjw==}
+  mquery@6.0.1:
+    resolution: {integrity: sha512-/Nijmq3JcpHwDM+5CwBp5yEl6fUa6jLsIhPsoQywlGXU/ZrKIvSpBzfaGnW9BLqcne/CoUwd1ch7MRqptDgFTA==}
     engines: {node: '>=20.19.0'}
 
   ms@2.1.3:
@@ -4693,6 +4696,7 @@ packages:
 
   node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
+    deprecated: This package is no longer needed on supported Node.js versions. Node.js 16+ includes AbortController and AbortSignal as built-in globals. All Node.js versions requiring this polyfill are end-of-life. Use the built-in globals instead.
 
   node-addon-api@8.9.2:
     resolution: {integrity: sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==}
@@ -5141,8 +5145,8 @@ packages:
   shell-exec@1.0.2:
     resolution: {integrity: sha512-jyVd+kU2X+mWKMmGhx4fpWbPsjvD53k9ivqetutVW/BQ+WIZoDoP4d8vUMGezV6saZsiNoW2f9GIhg9Dondohg==}
 
-  sift@17.1.3:
-    resolution: {integrity: sha512-Rtlj66/b0ICeFzYTuNvX/EF1igRbbnGSvEyT79McoZa/DeGhMyC5pWKOEsZKnpkqtSeovd5FL/bjHWC3CIIvCQ==}
+  sift@17.1.4:
+    resolution: {integrity: sha512-/OIVvj9Ts1mFwTYzW09YODMPeIOnDoigMOvKSIN44OmaCyhuCH/05UPF45XW7Ax0snmzDzCzdlSYqvqsn8+sIg==}
 
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
@@ -7126,7 +7130,7 @@ snapshots:
       tailwindcss: 4.3.3
       vite: 8.3.4(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
-  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a4a7f36535ff5e81a4a32ab668205ee0c39ba16b': {}
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/99d45475c038eb9cde298879b7b601f48e1d9304': {}
 
   '@turbo/darwin-64@2.11.5':
     optional: true
@@ -8826,7 +8830,7 @@ snapshots:
     dependencies:
       lodash-es: 4.18.1
 
-  kareem@3.4.0: {}
+  kareem@3.4.1: {}
 
   keyv@5.6.0:
     dependencies:
@@ -9395,21 +9399,21 @@ snapshots:
       '@types/whatwg-url': 13.0.0
       whatwg-url: 14.2.0
 
-  mongodb@7.7.0:
+  mongodb@7.8.0:
     dependencies:
       '@mongodb-js/saslprep': 1.6.0
       bson: 7.3.3
       mongodb-connection-string-url: 7.0.2
 
-  mongoose@9.11.1:
+  mongoose@9.12.1:
     dependencies:
       '@standard-schema/spec': 1.1.0
-      kareem: 3.4.0
-      mongodb: 7.7.0
+      kareem: 3.4.1
+      mongodb: 7.8.0
       mpath: 0.9.0
-      mquery: 6.0.0
+      mquery: 6.0.1
       ms: 2.1.3
-      sift: 17.1.3
+      sift: 17.1.4
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
       - '@mongodb-js/zstd'
@@ -9421,7 +9425,7 @@ snapshots:
 
   mpath@0.9.0: {}
 
-  mquery@6.0.0: {}
+  mquery@6.0.1: {}
 
   ms@2.1.3: {}
 
@@ -9958,7 +9962,7 @@ snapshots:
 
   shell-exec@1.0.2: {}
 
-  sift@17.1.3: {}
+  sift@17.1.4: {}
 
   signal-exit@4.1.0: {}
 
