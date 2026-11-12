@@ -4,6 +4,9 @@
       "path": "./plugins/k8s"
     },
     {
+      "path": "../agent-mesh/plugins/packages"
+    },
+    {
       "path": "node_modules/@tupynambalucas-dev/agent-mesh/plugins/packages"
     }
   ]
