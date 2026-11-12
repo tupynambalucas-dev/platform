@@ -40,10 +40,20 @@ Cloud environments (`staging` and `prod`) are delivered via ArgoCD GitOps, circu
 - **Secret Hygiene**: Secrets are resolved via Infisical (`infisical run --projectId ... --env dev`) or local `.env` fallback. Plaintext tokens must never be logged or committed.
 - **Routing**: When working within a specific bounded context, agents MUST read the local `AGENTS.md` file within that directory before proceeding.
 
+## Architectural Plans & Artifact Dual-Storage Standard
+
+Architectural blueprints, technical analyses, and master plans follow strict enterprise storage standards:
+
+- **Storage Location**: Blueprints, analyses, and reports reside in `plans/<artifact-slug>/` (or `plans/<artifact-slug>.md`), with `.agents/plans/<artifact-slug>/` fully recognized for backward compatibility.
+- **Topologies**: Topology 1 (Single-File Artifact) for atomic refactors, analyses, and reports; Topology 2 (Multi-Artifact Suite) for multi-domain frameworks with master `README.md` and numbered domain documents.
+- **Dual-Storage Invariant**: Whenever an agent creates an architectural plan, analysis, or report artifact in the Antigravity conversation directory (`<appDataDir>/brain/<conversation-id>/`), an identical synchronized copy MUST ALWAYS be mirrored in `plans/<artifact-slug>/` (or `plans/<artifact-slug>.md`).
+- **Ignore & Index Triad**: All repositories ignore `plans/` and `.agents/plans/` in `.gitignore`, while explicitly un-ignoring them in `.ignore` and `.rgignore` (`!plans/`, `!plans/**`, `!.agents/plans/`, `!.agents/plans/**`) and setting `"search.useIgnoreFiles": false` in `.vscode/settings.json` so files can always be attached with `@`.
+
 ## Required Skills
 
 When performing documentation tasks in this monorepo, agents MUST activate the appropriate skill by name before beginning:
 
+- **`plan-architect`**: Active when designing, structuring, authoring, or auditing architectural plans, technical analyses, and governance reports following the dual-storage standard.
 - **`router-architect`**: Active when creating, updating, or reviewing any `AGENTS.md` file anywhere in the monorepo.
 - **`readme-architect`**: Active when creating, updating, or reviewing any `README.md`, `.md` skill file, or general Markdown document.
 - **`secrets-expert`**: Active when configuring or verifying Infisical secrets or Kubernetes secret manifests.
