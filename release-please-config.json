@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "changelog-sections": [
+    { "type": "feat", "section": "Features & Capabilities", "hidden": false },
+    { "type": "fix", "section": "Bug Fixes & Corrections", "hidden": false },
+    { "type": "perf", "section": "Performance Optimizations", "hidden": false },
+    { "type": "refactor", "section": "Refactoring & Internal Architecture", "hidden": false },
+    { "type": "docs", "section": "Documentation & Specifications", "hidden": false },
+    { "type": "security", "section": "Security & Vulnerability Patches", "hidden": false },
+    { "type": "revert", "section": "Reverts & Rollbacks", "hidden": false },
+    { "type": "chore", "section": "Maintenance & Operational Chores", "hidden": true },
+    { "type": "test", "section": "Testing & Test Harness", "hidden": true },
+    { "type": "ci", "section": "Continuous Integration", "hidden": true },
+    { "type": "style", "section": "Styling & Linting", "hidden": true }
+  ],
+  "include-commit-authors": true,
+  "component-no-space": true,
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/platform",
+      "changelog-path": "CHANGELOG.md"
+    },
+    "corporate/packages/core": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/corporate-core"
+    },
+    "corporate/services/api": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/corporate-api"
+    },
+    "corporate/services/web": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/corporate-web"
+    },
+    "hub/cortex/mcp/guardrails": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/cortex-mcp-guardrails"
+    },
+    "hub/cortex/memory/packages/core": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/cortex-memory-core"
+    },
+    "hub/cortex/memory/services/api": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/cortex-memory-api"
+    },
+    "hub/cortex/memory/services/web": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/cortex-memory-web"
+    },
+    "hub/studio/assets": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/studio-assets"
+    },
+    "hub/studio/bucket": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/studio-bucket"
+    },
+    "k8s": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/k8s"
+    },
+    "renderer": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/renderer"
+    },
+    "shared/config": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/shared-config"
+    },
+    "shared/git": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/shared-git"
+    },
+    "tools/github": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/tools-github"
+    },
+    "tools/provisioner": {
+      "release-type": "node",
+      "package-name": "@tupynambalucas-dev/tools-provisioner"
+    }
+  },
+  "plugins": [
+    {
+      "type": "node-workspace"
+    }
+  ]
+}
