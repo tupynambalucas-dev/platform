@@ -1,0 +1,27 @@
+# lefthook.yml - tupynambalucas-dev/platform
+# Authoritative Git Hook Configuration (Evil Martians Lefthook)
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm exec tsx shared/git/scripts/pre-commit.ts
+    typecheck:
+      run: pnpm turbo run typecheck --filter=[HEAD]
+
+commit-msg:
+  commands:
+    prepare:
+      run: pnpm exec tsx shared/git/scripts/prepare-commit-msg.ts {1}
+    commitlint:
+      run: npx --no -- commitlint --edit {1}
+
+pre-push:
+  commands:
+    prevent-main-push:
+      run: |
+        BRANCH=$(git branch --show-current)
+        if [ "$BRANCH" = "main" ]; then
+          echo "[ERROR] Direct push to main branch is strictly blocked."
+          exit 1
+        fi
