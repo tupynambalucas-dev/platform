@@ -11,4 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Features & Capabilities
 
-- [feat(api): initialize Fastify API server with layered domain architecture and routing](https://github.com/tupynambalucas-dev/platform/commit/49ae855)
+- [feat(api): initialize Fastify API server with layered domain architecture and routing (49ae855)](https://github.com/tupynambalucas-dev/platform/commit/49ae855) ([@tupynambalucas](https://github.com/tupynambalucas))
