@@ -10,11 +10,5 @@
     "type": "git",
     "url": "git+https://github.com/tupynambalucas-dev/platform.git"
   },
-  "type": "module",
-  "scripts": {
-    "// prepare": "deprecated: husky initialized at platform root"
-  },
-  "devDependencies": {
-    "husky": "catalog:"
-  }
+  "type": "module"
 }

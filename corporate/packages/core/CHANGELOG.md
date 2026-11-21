@@ -11,4 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Features & Capabilities
 
-- [feat(core): initialize domain models, database schemas, and shared business primitives](https://github.com/tupynambalucas-dev/platform/commit/49ae855)
+- [feat(core): initialize domain models, database schemas, and shared business primitives (49ae855)](https://github.com/tupynambalucas-dev/platform/commit/49ae855) ([@tupynambalucas](https://github.com/tupynambalucas))

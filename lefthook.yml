@@ -5,14 +5,16 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: pnpm exec tsx shared/git/scripts/pre-commit.ts
+      run: pnpm turbo run lint --filter=[HEAD]
     typecheck:
       run: pnpm turbo run typecheck --filter=[HEAD]
+    format:
+      glob: "*.{ts,tsx,json,md,css,html}"
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
 
 commit-msg:
   commands:
-    prepare:
-      run: pnpm exec tsx shared/git/scripts/prepare-commit-msg.ts {1}
     commitlint:
       run: npx --no -- commitlint --edit {1}
 
