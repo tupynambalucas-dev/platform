@@ -154,7 +154,7 @@ cp corporate/services/api/.env.example corporate/services/api/.env
 cp corporate/services/web/.env.example corporate/services/web/.env
 ```
 
-When operating inside the `org-core` umbrella meta-repository, secrets also cascade from the parent `org-core/.env` file or an active root Infisical session. In Kubernetes clusters, workloads consume secrets declaratively via `InfisicalSecret` custom resources.
+When operating inside the `org` umbrella meta-repository, secrets also cascade from the parent `org/.env` file or an active root Infisical session. In Kubernetes clusters, workloads consume secrets declaratively via `InfisicalSecret` custom resources.
 
 ---
 
