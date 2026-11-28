@@ -255,8 +255,8 @@ catalogs:
       specifier: ^6.3.8
       version: 6.3.11
     fastify:
-      specifier: ^5.12.5
-      version: 5.12.5
+      specifier: ^5.12.6
+      version: 5.12.8
     fastify-metrics:
       specifier: ^14.1.0
       version: 14.1.0
@@ -339,7 +339,7 @@ catalogs:
   plugins-stack:
     '@tupynambalucas-dev/agent-mesh':
       specifier: github:tupynambalucas-dev/agent-mesh
-      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93
+      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c
   shared-stack:
     axios:
       specifier: ^1.20.0
@@ -471,7 +471,7 @@ importers:
         version: 10.0.1(eslint@10.11.0(jiti@2.7.0)(supports-color@10.2.2))
       '@tupynambalucas-dev/agent-mesh':
         specifier: catalog:plugins-stack
-        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93
+        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
         version: link:shared/config
@@ -604,16 +604,16 @@ importers:
         version: 18.0.6
       fastify:
         specifier: catalog:api-stack
-        version: 5.12.5
+        version: 5.12.8
       fastify-metrics:
         specifier: catalog:api-stack
-        version: 14.1.0(fastify@5.12.5)
+        version: 14.1.0(fastify@5.12.8)
       fastify-plugin:
         specifier: catalog:api-stack
         version: 6.0.0
       fastify-type-provider-zod:
         specifier: catalog:api-stack
-        version: 7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.5)(openapi-types@12.1.3)(zod@4.6.5)
+        version: 7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.8)(openapi-types@12.1.3)(zod@4.6.5)
       ioredis:
         specifier: catalog:api-stack
         version: 6.0.0(supports-color@10.2.2)
@@ -776,13 +776,13 @@ importers:
         version: 7.0.0
       '@fastify/sse':
         specifier: catalog:api-stack
-        version: 0.6.1(fastify@5.12.5)
+        version: 0.6.1(fastify@5.12.8)
       '@tupynambalucas-dev/cortex-memory-core':
         specifier: workspace:*
         version: link:../../packages/core
       fastify:
         specifier: catalog:api-stack
-        version: 5.12.5
+        version: 5.12.8
       fastify-plugin:
         specifier: catalog:api-stack
         version: 6.0.0
@@ -2527,9 +2527,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93':
-    resolution: {gitHosted: true, integrity: sha512-6TKGgkERZnbeK9dSSf217+EF3vWT7biamU8VEU+7+11Wc4Zw5n6eIsy0zY/4lLDJ06dRgJv/D+XGfiiJh0Rjjw==, tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93}
-    version: 1.3.0
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c':
+    resolution: {gitHosted: true, integrity: sha512-mDEYEUBPhwCCMXgOna7MqssKTQArYGPP8NYhsQ7dhZ8WGb7iakCxByOWA82PNFjYzh7adzxNTB9jCPBpOKKdOA==, tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c}
+    version: 1.4.0
 
   '@turbo/darwin-64@2.11.5':
     resolution: {integrity: sha512-KdY4y7BBjIisl+jAkb3FFaRjClGqHyaeHCcVcCT8LBzFFwUu6thgfxyRZAx0uL4KoxLmH+iOan8UhVf/aDDcaA==}
@@ -3783,8 +3783,8 @@ packages:
       openapi-types: ^12.1.3
       zod: '>=4.1.5'
 
-  fastify@5.12.5:
-    resolution: {integrity: sha512-OB2k1dlxs5/NAABqeKV2FUHkSD2BbENsCak8yULVcymn3fHIPDVa9TI3SDnJSWYSllZmSYuZXy2gTnsT+Sut1A==}
+  fastify@5.12.8:
+    resolution: {integrity: sha512-moP8exb2sCHLUbJkwp+I6C0padhy4D8lp0SdmzY7HhSdZuqm7O/u3o2aq7u8okaQ//33QDzj3G/u+FsSdB8Qzw==}
 
   fastparallel@2.4.1:
     resolution: {integrity: sha512-qUmhxPgNHmvRjZKBFUNI0oZuuH9OlSIOXmJ98lhKPxMZZ7zS/Fi0wRHOihDSz0R1YiIOjxzOY4bq65YTcdBi2Q==}
@@ -3811,8 +3811,8 @@ packages:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
 
-  find-my-way@9.9.0:
-    resolution: {integrity: sha512-sJsgZ1sQH2UDuowPuMKg8az7Qc8F0jnj+SKkFWU/+T0xcFlgV5skgXOGUqmQzOdmW6ALA7AhJINWx3qFBkbLHA==}
+  find-my-way@9.10.2:
+    resolution: {integrity: sha512-gbLMuTm2FV5QiRh/eM0uhL4nyOvbSqqa2K3mASAtkIqxvY8ZmoLOCLMd2syLWT/SyhrvOR7GPxOKj/kcV6o8bg==}
     engines: {node: '>=20'}
 
   find-up@4.1.0:
@@ -6367,10 +6367,10 @@ snapshots:
       fastify-plugin: 6.0.0
       safe-stable-stringify: 2.5.0
 
-  '@fastify/sse@0.6.1(fastify@5.12.5)':
+  '@fastify/sse@0.6.1(fastify@5.12.8)':
     dependencies:
       '@fastify/error': 4.2.0
-      fastify: 5.12.5
+      fastify: 5.12.8
       fastify-plugin: 6.0.0
 
   '@fastify/swagger@9.9.1(supports-color@10.2.2)':
@@ -7160,7 +7160,7 @@ snapshots:
       tailwindcss: 4.3.3
       vite: 8.3.4(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
-  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93': {}
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c': {}
 
   '@turbo/darwin-64@2.11.5':
     optional: true
@@ -8475,25 +8475,25 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  fastify-metrics@14.1.0(fastify@5.12.5):
+  fastify-metrics@14.1.0(fastify@5.12.8):
     dependencies:
       '@prometheus-io/client': 0.16.1
-      fastify: 5.12.5
+      fastify: 5.12.8
       fastify-plugin: 6.0.0
 
   fastify-plugin@5.1.0: {}
 
   fastify-plugin@6.0.0: {}
 
-  fastify-type-provider-zod@7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.5)(openapi-types@12.1.3)(zod@4.6.5):
+  fastify-type-provider-zod@7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.8)(openapi-types@12.1.3)(zod@4.6.5):
     dependencies:
       '@fastify/error': 4.2.0
       '@fastify/swagger': 9.9.1(supports-color@10.2.2)
-      fastify: 5.12.5
+      fastify: 5.12.8
       openapi-types: 12.1.3
       zod: 4.6.5
 
-  fastify@5.12.5:
+  fastify@5.12.8:
     dependencies:
       '@fastify/ajv-compiler': 4.0.6
       '@fastify/error': 4.2.0
@@ -8502,7 +8502,7 @@ snapshots:
       abstract-logging: 2.0.1
       avvio: 9.3.0
       fast-json-stringify: 7.0.1
-      find-my-way: 9.9.0
+      find-my-way: 9.10.2
       light-my-request: 6.6.0
       pino: 10.4.0
       process-warning: 5.1.0
@@ -8537,7 +8537,7 @@ snapshots:
     dependencies:
       to-regex-range: 5.0.1
 
-  find-my-way@9.9.0:
+  find-my-way@9.10.2:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-querystring: 1.1.2
