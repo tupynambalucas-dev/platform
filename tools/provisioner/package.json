@@ -1,6 +1,6 @@
 {
   "name": "@tupynambalucas-dev/tools-provisioner",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Workstation provisioner CLI for initializing local development environments.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",

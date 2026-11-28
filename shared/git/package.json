@@ -1,6 +1,6 @@
 {
   "name": "@tupynambalucas-dev/shared-git",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Git hooks and commit conventions shared across the monorepo.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",
