@@ -339,7 +339,7 @@ catalogs:
   plugins-stack:
     '@tupynambalucas-dev/agent-mesh':
       specifier: github:tupynambalucas-dev/agent-mesh
-      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93
+      version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c
   shared-stack:
     axios:
       specifier: ^1.20.0
@@ -354,8 +354,8 @@ catalogs:
       specifier: ^4.3.3
       version: 4.3.3
     zod:
-      specifier: ^4.6.5
-      version: 4.6.5
+      specifier: ^4.6.6
+      version: 4.6.7
   studio-stack:
     react-icons:
       specifier: ^5.7.0
@@ -471,7 +471,7 @@ importers:
         version: 10.0.1(eslint@10.11.0(jiti@2.7.0)(supports-color@10.2.2))
       '@tupynambalucas-dev/agent-mesh':
         specifier: catalog:plugins-stack
-        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93
+        version: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
         version: link:shared/config
@@ -537,7 +537,7 @@ importers:
     dependencies:
       zod:
         specifier: catalog:shared-stack
-        version: 4.6.5
+        version: 4.6.7
     devDependencies:
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
@@ -613,7 +613,7 @@ importers:
         version: 6.0.0
       fastify-type-provider-zod:
         specifier: catalog:api-stack
-        version: 7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.5)(openapi-types@12.1.3)(zod@4.6.5)
+        version: 7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.5)(openapi-types@12.1.3)(zod@4.6.7)
       ioredis:
         specifier: catalog:api-stack
         version: 6.0.0(supports-color@10.2.2)
@@ -628,7 +628,7 @@ importers:
         version: 2.0.1(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
       zod:
         specifier: catalog:shared-stack
-        version: 4.6.5
+        version: 4.6.7
     devDependencies:
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
@@ -754,7 +754,7 @@ importers:
     dependencies:
       zod:
         specifier: catalog:shared-stack
-        version: 4.6.5
+        version: 4.6.7
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -794,7 +794,7 @@ importers:
         version: 9.12.1
       zod:
         specifier: catalog:shared-stack
-        version: 4.6.5
+        version: 4.6.7
     devDependencies:
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
@@ -947,7 +947,7 @@ importers:
         version: 18.0.6
       zod:
         specifier: catalog:shared-stack
-        version: 4.6.5
+        version: 4.6.7
     devDependencies:
       '@tupynambalucas-dev/shared-config':
         specifier: workspace:*
@@ -2527,9 +2527,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93':
-    resolution: {gitHosted: true, integrity: sha512-6TKGgkERZnbeK9dSSf217+EF3vWT7biamU8VEU+7+11Wc4Zw5n6eIsy0zY/4lLDJ06dRgJv/D+XGfiiJh0Rjjw==, tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93}
-    version: 1.3.0
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c':
+    resolution: {gitHosted: true, integrity: sha512-mDEYEUBPhwCCMXgOna7MqssKTQArYGPP8NYhsQ7dhZ8WGb7iakCxByOWA82PNFjYzh7adzxNTB9jCPBpOKKdOA==, tarball: https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c}
+    version: 1.4.0
 
   '@turbo/darwin-64@2.11.5':
     resolution: {integrity: sha512-KdY4y7BBjIisl+jAkb3FFaRjClGqHyaeHCcVcCT8LBzFFwUu6thgfxyRZAx0uL4KoxLmH+iOan8UhVf/aDDcaA==}
@@ -5722,6 +5722,9 @@ packages:
   zod@4.6.5:
     resolution: {integrity: sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q==}
 
+  zod@4.6.7:
+    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
+
   zustand@5.0.15:
     resolution: {integrity: sha512-MpSEjRiBkA9crSYeOUH32rJC7SVqAbm0Fqcqge/bUi2PPoLcBWKOsG+C8mevmpr8TwXHBVkChbbJiyvkE+i/3A==}
     engines: {node: '>=12.20.0'}
@@ -7160,7 +7163,7 @@ snapshots:
       tailwindcss: 4.3.3
       vite: 8.3.4(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
-  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/a5bc9303d7516a241994e1e28fa005add2e59f93': {}
+  '@tupynambalucas-dev/agent-mesh@https://codeload.github.com/tupynambalucas-dev/agent-mesh/tar.gz/4403ca79195f292888f1164f80b14de24f211c1c': {}
 
   '@turbo/darwin-64@2.11.5':
     optional: true
@@ -8485,13 +8488,13 @@ snapshots:
 
   fastify-plugin@6.0.0: {}
 
-  fastify-type-provider-zod@7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.5)(openapi-types@12.1.3)(zod@4.6.5):
+  fastify-type-provider-zod@7.0.0(@fastify/swagger@9.9.1(supports-color@10.2.2))(fastify@5.12.5)(openapi-types@12.1.3)(zod@4.6.7):
     dependencies:
       '@fastify/error': 4.2.0
       '@fastify/swagger': 9.9.1(supports-color@10.2.2)
       fastify: 5.12.5
       openapi-types: 12.1.3
-      zod: 4.6.5
+      zod: 4.6.7
 
   fastify@5.12.5:
     dependencies:
@@ -10623,6 +10626,8 @@ snapshots:
   zod@4.4.3: {}
 
   zod@4.6.5: {}
+
+  zod@4.6.7: {}
 
   zustand@5.0.15(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0)):
     optionalDependencies:
