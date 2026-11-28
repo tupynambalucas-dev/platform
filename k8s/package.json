@@ -1,7 +1,7 @@
 {
   "name": "@tupynambalucas-dev/k8s",
   "description": "Centralized Kubernetes Infrastructure via Skaffold and Kustomize",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "dev": "skaffold dev --check-cluster-node-platforms=false",
     "build": "skaffold build --check-cluster-node-platforms=false",

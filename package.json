@@ -1,6 +1,6 @@
 {
   "name": "@tupynambalucas-dev/platform",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Root monorepo workspace for the ecosystem.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",

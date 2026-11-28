@@ -1,6 +1,6 @@
 {
   "name": "@tupynambalucas-dev/studio-bucket",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Cloudflare R2 synchronization engine for design studio assets.",
   "author": "Tupynambá Lucas Varela Rodrigues <tupynambalucas.dev>",
